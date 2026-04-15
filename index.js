@@ -10,6 +10,8 @@ const fs = require( 'fs' );
 
 // Non-blocking, asynchronous way
 fs. readFile('./txt/start.txt', 'utf-8', (err, data1) => {
+    if(err) return console. log('Error!') ;
+
   fs. readFile('./txt/${data1}.txt', 'utf-8', (err, data2) => {
     console. log(data2) ;
 
