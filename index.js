@@ -39,6 +39,7 @@ if(pathName === '/' || pathName ==='/overview'){
 } else if(pathName ==='/product'){
   res.end('This is the PRODUCT');
 } else {
+  res.writeHead(404);
   res.end('Page not found!');
 }
 });
