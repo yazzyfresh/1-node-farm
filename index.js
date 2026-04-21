@@ -38,7 +38,9 @@ if(pathName === '/' || pathName ==='/overview'){
   res.end('This is the OVERVIEW');
 } else if(pathName ==='/product'){
   res.end('This is the PRODUCT');
-} else {
+}else if(pathName ==='/api'){ 
+  res.end('This is the API');
+}else {
   res.writeHead(404, {
     'content-type': 'text/html',
     'my-own-header': 'hello-world'
