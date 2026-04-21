@@ -43,7 +43,8 @@ const server = http.createServer((req, res) => {
       const productData = JSON.parse(data);
       res.writeHead(200, { "Content-type": "application/json" });
       res.end(data);
-    });
+    })
+    
   } else {
     res.writeHead(404, {
       "content-type": "text/html",
