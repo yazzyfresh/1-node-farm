@@ -39,7 +39,10 @@ if(pathName === '/' || pathName ==='/overview'){
 } else if(pathName ==='/product'){
   res.end('This is the PRODUCT');
 }else if(pathName ==='/api'){ 
-  res.end('This is the API');
+
+  fs.readFile('./dev-data/data.json')
+
+  res.end('API');
 }else {
   res.writeHead(404, {
     'content-type': 'text/html',
