@@ -33,9 +33,10 @@ const url = require("url");
 // Server
 
 
-fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => {
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => {
       const productData = JSON.parse(data);
     });
+    const productData = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
   const pathName = req.url;
