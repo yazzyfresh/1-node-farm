@@ -70,22 +70,25 @@ const data = fs.readFileSync(
 );
 const dataObj = JSON.parse(data);
 
+console.log(cardsHtml);
+
 /////////////////////////////
 // SERVER
 const server = http.createServer((req, res) => {
   const { pathname, query } = url.parse(req.url, true);
 
   // Overview page
-  if (pathname === "/" || pathname === "/overview") {
-    res.writeHead(200, { "Content-type": "text/html" });
+ if (pathname === "/" || pathname === "/overview") {
+  res.writeHead(200, { "Content-type": "text/html" });
 
-    const cardsHtml = dataObj
-      .map((el) => replaceTemplate(tempCard, el))
-      .join("");
+  const cardsHtml = dataObj
+    .map(el => replaceTemplate(tempCard, el))
+    .join("");
 
-    const output = tempOverview.replace("{%PRODUCT_CARDS%}", cardsHtml);
+  const output = tempOverview.replace("{%PRODUCT_CARDS%}", cardsHtml);
 
-    res.end(output);
+  return res.end(output);
+
 
     // Product page
   } else if (pathname === "/product") {
