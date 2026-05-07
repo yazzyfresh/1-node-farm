@@ -6,25 +6,30 @@
   </div>
 
   <div class="card__details">
-    <div class="card__detail-box {%NOT_ORGANIC%}">
+    
+    <!-- ORGANIC LABEL -->
+    <div class="card__detail-box">
+      <h6 class="card__detail card__detail--organic {%NOT_ORGANIC%}">
+        Organic!
+      </h6>
+    </div>
+
+    <!-- QUANTITY -->
+    <div class="card__detail-box">
       <h6 class="card__detail">{%QUANTITY%} per 📦</h6>
     </div>
 
+    <!-- PRICE -->
     <div class="card__detail-box">
-      <h6 class="card__detail card__detail--price">${%PRICE%}</h6>
+      <h6 class="card__detail card__detail--price">
+        {%PRICE%}€
+      </h6>
     </div>
 
-    <!-- Optional (but recommended) -->
-    <div class="card__detail-box">
-      <h6 class="card__detail">From {%FROM%}</h6>
-    </div>
+    <!-- DETAIL LINK -->
+    <a class="card__link" href="/product?id={%ID%}">
+      <span>Detail 👉</span>
+    </a>
 
-    <div class="card__detail-box">
-      <h6 class="card__detail">{%NUTRIENTS%}</h6>
-    </div>
   </div>
-
-  <a class="card__link" href="/product?id={%ID%}">
-    <span>Detail <i class="emoji-right">👉</i></span>
-  </a>
 </figure>

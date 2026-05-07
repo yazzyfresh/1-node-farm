@@ -16,10 +16,12 @@ const replaceTemplate = (temp, product) => {
   output = output.replace(/{%DESCRIPTION%}/g, product.description);
   output = output.replace(/{%ID%}/g, product.id);
 
-  output = output.replace(
-    /{%NOT_ORGANIC%}/g,
-    product.organic ? '' : 'not-organic'
-  );
+  // ORGANIC BADGE
+  if (!product.organic) {
+    output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+  } else {
+    output = output.replace(/{%NOT_ORGANIC%}/g, '');
+  }
 
   return output;
 };
@@ -50,7 +52,7 @@ const data = fs.readFileSync(
 const dataObj = JSON.parse(data);
 
 /////////////////////////////
-// SERVER
+// CREATE SERVER
 
 const server = http.createServer((req, res) => {
   const { pathname, query } = url.parse(req.url, true);
