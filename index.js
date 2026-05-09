@@ -1,9 +1,10 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
+require('.')
 
 /////////////////////////////
-// Server
+// Serve
 
 const tempOverview = fs.readFileSync(
   `${__dirname}/templates/template-overview.html`,
