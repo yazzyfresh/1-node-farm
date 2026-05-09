@@ -1,0 +1,20 @@
+{
+  "name": "node-farm",
+  "version": "1.0.0",
+  "description": "Learning node.js",
+  "homepage": "https://github.com/yazzyfresh/1-node-farm#readme",
+  "bugs": {
+    "url": "https://github.com/yazzyfresh/1-node-farm/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yazzyfresh/1-node-farm.git"
+  },
+  "license": "ISC",
+  "author": "Yazmin Ramirez",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
