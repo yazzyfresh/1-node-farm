@@ -28,17 +28,6 @@ const dataObj = JSON.parse(data);
 
 const slugs = dataObj.map((el) => slugify(el.productName, { lower: true }));
 
-
-
-
-
-
-
-
-
-
-
-
 console.log(slugs);
 
 const server = http.createServer((req, res) => {
@@ -50,6 +39,7 @@ const server = http.createServer((req, res) => {
       'Content-type': 'text/html',
     });
 
+    
     const cardsHtml = dataObj
       .map((el) => replaceTemplate(tempCard, el))
       .join('');
